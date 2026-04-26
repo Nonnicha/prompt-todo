@@ -16,7 +16,7 @@ RSpec.describe "Todos", type: :request do
       expect(Todo.last.title).to eq("New test task")
     end
   end
-  
+
   describe "PATCH /todos/:id/toggle" do
     it "toggles the completion status and redirects" do
       todo = Todo.create!(title: "Toggle task", completed: false)
@@ -25,7 +25,7 @@ RSpec.describe "Todos", type: :request do
       expect(todo.reload.completed).to be(true)
     end
   end
-  
+
   describe "DELETE /todos/:id" do
     it "deletes the todo and redirects" do
       todo = Todo.create!(title: "Task to delete")

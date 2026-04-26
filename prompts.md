@@ -32,3 +32,6 @@ fix error test in ./spec/requests/todos_spec.rb
 
 **9. Prompt:**
 write readme.md for explain the new user to onboard this project
+
+**10. Prompt:**
+fix rubocop errors

@@ -16,7 +16,7 @@ class TodosController < ApplicationController
     @todo.update(completed: !@todo.completed)
     redirect_to root_path
   end
-  
+
   def destroy
     @todo = Todo.find(params[:id])
     @todo.destroy
