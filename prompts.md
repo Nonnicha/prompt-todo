@@ -29,3 +29,6 @@ add e2e test by rspec
 
 **8. Prompt:**
 fix error test in ./spec/requests/todos_spec.rb
+
+**9. Prompt:**
+write readme.md for explain the new user to onboard this project
