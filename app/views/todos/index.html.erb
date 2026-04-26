@@ -1,0 +1,23 @@
+<div class="todo-container">
+  <h1>Enterprise Todo List</h1>
+
+  <%= form_with model: @new_todo, url: todos_path, local: true, class: "todo-form" do |f| %>
+    <%= f.text_field :title, required: true, class: "todo-input", placeholder: "What needs to be done?" %>
+    <%= f.submit "Add Todo", class: "todo-submit" %>
+  <% end %>
+
+  <ul class="todo-list">
+    <% @todos.each do |todo| %>
+      <li class="todo-item">
+        <span class="todo-text <%= 'completed' if todo.completed %>">
+          <%= todo.title %>
+        </span>
+
+        <div class="todo-actions">
+          <%= button_to todo.completed ? "Mark Incomplete" : "Mark Complete", toggle_todo_path(todo), method: :patch, class: "btn btn-toggle" %>
+          <%= button_to "Delete", todo_path(todo), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-delete" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
